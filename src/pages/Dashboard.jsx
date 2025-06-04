@@ -2,7 +2,7 @@ import { House, Users, CodeXml, Calendar, BookText, Network, Award, Podcast, Set
 import logo from '../assets/1.jpg'
 import Navbar from '../components/Navbar/Navbar';
 import Cards from "../pages/cards/Cards"
-import FrontEndDashboard from '../pages/FrontEndDashboard ';
+import FrontEndDashboard from '../pages/FrontEndDashboard';
 import { useState } from 'react';
 
 const Dashboard = () => {
