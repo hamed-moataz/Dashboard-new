@@ -2,7 +2,7 @@ import { House, Users, CodeXml, Calendar, BookText, Network, Award, Podcast, Set
 import logo from '../assets/1.jpg'
 import Navbar from '../components/Navbar/Navbar';
 import Cards from "../pages/cards/Cards"
-import FrontEndDashboard from '../pages/FrontEndDashboard';
+import FrontEndDashboard from "./FrontEndDashboard";
 import { useState } from 'react';
 
 const Dashboard = () => {
@@ -15,30 +15,31 @@ const Dashboard = () => {
     return (
         <>
             {/* Mobile Toggle Button */}
-            <button 
+            <button
                 onClick={toggleSidebar}
-                type="button" 
-                className="absolute right-4 z-10 top-20 p-2 mt-2  text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                type="button"
+                className="absolute right-4 z-1 top-20 p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             >
-                <span className="sr-only ">Open sidebar</span>
-                {sidebarOpen ? <Menu size={24} /> : <X size={24} />}
+                {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
+
             {/* Sidebar */}
-            <aside 
-                id="logo-sidebar" 
-                className={`fixed top-0 right-0 z-40 w-64 h-screen transition delay-300 duration-300 ease-in-out ${sidebarOpen ? 'w-0' : 'w-64'} sm:translate-x-0`} 
+            <aside
+                id="logo-sidebar"
+                className={`fixed top-0 right-0 z-40 w-64 h-screen bg-white transition-transform duration-300 ease-in-out transform 
+    ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'} sm:translate-x-0`}
                 aria-label="Sidebar"
             >
                 <div className="h-full px-3 py-4 overflow-y-auto bg-white">
                     <div className="flex items-center justify-between ps-2.5 mb-4">
-                        <button 
+                        <button
                             onClick={toggleSidebar}
                             className="sm:hidden p-1 text-red-500 hover:text-gray-700 "
                         >
                             <X size={25} />
                         </button>
-                        <img src={logo} className="h-12 me-3 sm:h-24 w-18 bg-transparent" alt="Logo" />
+                        <img src={logo} className="h-12  xl:h-24 xl:w-full ml-10 bg-transparent " alt="Logo" />
                     </div>
                     <ul className="space-y-2 font-medium flex flex-col items-end">
                         <li>
